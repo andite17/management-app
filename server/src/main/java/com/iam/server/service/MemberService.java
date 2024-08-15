@@ -56,6 +56,13 @@ public class MemberService {
         return mapToPageableResponse(memberPage, members);
     }
 
+    public MemberResponse detail(String id) {
+        Member member = repository.findById(id).orElseThrow(
+                ()-> new RuntimeException("Member not found"));
+
+        return mapToResponse(member);
+    }
+
     public String edit(String id, MemberRequest request) {
         Member member = repository.findById(id).orElseThrow(
                 ()-> new RuntimeException("Member not found"));
@@ -104,7 +111,7 @@ public class MemberService {
                 member.getName(),
                 BASE_URL.concat("/member/image/").concat(member.getId()),
                 member.getPosition().toString(),
-                "sadasdsda"
+                "superior"
         );
     }
 

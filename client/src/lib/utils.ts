@@ -41,6 +41,7 @@ export const clearSession = () => {
 };
 
 export const getAliasName = (name:string) => {
+  console.log(name)
   const listString : string[] = name.toLocaleUpperCase().split(" ");
   
   return listString.length > 1 ? listString[0].charAt(0).concat(listString[1].charAt(0)) : listString[0].charAt(0) 

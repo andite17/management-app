@@ -3,13 +3,15 @@ import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
 
 const Header = () => {
   return (
-    <div className="container h-14 flex justify-between items-center bg-blue-300">
-        <img className='w-[100px]' src="./logo-buana-color.png" alt="lgo" />
+    <div className="h-14 shadow-md">
+        <div className="container flex justify-between items-center">
+          <img className='w-[100px]' src="./logo-buana-color.png" alt="logo" />
 
-        <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" />
-            <AvatarFallback>CN</AvatarFallback>
-        </Avatar>
+          <Avatar>
+              <AvatarImage src="https://github.com/shadcn.png" />
+              <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
+        </div>
     </div>
   )
 }

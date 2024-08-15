@@ -52,6 +52,11 @@ public class MemberController {
         return new ResponseEntity<>(members, HttpStatus.OK);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<?> detail(@PathVariable("id") String id) {
+        return ResponseEntity.ok(service.detail(id));
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<?> create(@Valid @RequestBody MemberRequest request, @PathVariable("id") String id) {
         return ResponseEntity.ok(service.edit(id, request));

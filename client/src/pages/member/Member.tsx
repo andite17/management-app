@@ -25,6 +25,7 @@ import { BASE_URL } from '@/constant/constant'
 import { getAliasName, getToken, MemberType } from '@/lib/utils'
 import DeleteMember from './DeleteMember'
 import Header from '@/components/Header'
+import { Link } from 'react-router-dom'
 
 const Member = () => {
     const[members, setMembers] = useState<[]>();
@@ -67,7 +68,7 @@ const Member = () => {
                     <TableBody>
                         {members?.map((member : MemberType, index)=> {
                             return(
-                                <TableRow id={member.id}>
+                                <TableRow id={member.id} key={member.id}>
                                     <TableCell className="font-medium">{index+1}</TableCell>
                                     <TableCell className='flex gap-2 items-center'>
                                         <Avatar>
@@ -79,6 +80,9 @@ const Member = () => {
                                     </TableCell>
                                     <TableCell>{member.position}</TableCell>
                                     <TableCell className="text-right">
+                                        <Link to={`/member/${member.id}`} className='mr-4'>
+                                            <Button>detail</Button>
+                                        </Link>
                                         <DeleteMember idMember={member.id}/>
                                     </TableCell>
                                 </TableRow>
