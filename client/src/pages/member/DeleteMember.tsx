@@ -13,9 +13,11 @@ import {
 import { Button } from '@/components/ui/button'
 import axios from 'axios'
 import { BASE_URL } from '@/constant/constant'
+import { useNavigate } from 'react-router-dom'
 
 const DeleteMember = (props : {idMember:string}) => {
     const {idMember} = props;
+    const navigate = useNavigate();
     
     const handleDeleteOnClikConfimation = async () => {
         await axios.delete(`${BASE_URL}/member/${idMember}`,{
@@ -23,6 +25,8 @@ const DeleteMember = (props : {idMember:string}) => {
                 "Authorization" : `Bearer ${sessionStorage.getItem('token')}`
             }
         })
+        navigate('/', { replace: true });
+        window.location.reload();
     }
 
   return (

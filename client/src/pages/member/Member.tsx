@@ -3,9 +3,7 @@ import { Button } from '@/components/ui/button'
 import {
     Table,
     TableBody,
-    TableCaption,
     TableCell,
-    TableFooter,
     TableHead,
     TableHeader,
     TableRow,
@@ -52,7 +50,6 @@ const Member = () => {
         <section className='container mt-10'>
             <div className="flex justify-end">
                 <AddMember/>
-                {/* <Button>Add member</Button> */}
             </div>
 
             <div className="mt-5">

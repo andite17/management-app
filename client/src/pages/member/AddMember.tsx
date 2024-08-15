@@ -29,7 +29,6 @@ const AddMember = () => {
     const handleFileUpload =async (e : any) => {
         const file = e.target.files[0];
         const base64Url = await convertToBase64(file);
-        // const base64 = (base64Url as string).split(",")[1];
         setImg(base64Url);
     }
     
@@ -45,18 +44,12 @@ const AddMember = () => {
             reportTo,
             img : img.split(",")[1]
         })
-
-        // console.log(requestBody)
         
         try{
             const response = await axios.post(`${BASE_URL}/member`, requestBody , config)
             console.log(response.data)
-            
-            // if(response.status !== 200) {
-            //     setError(response.data.name)
-            // }
             navigate('/', { replace: true });
-            window.location.reload(); // Force a reload of the page
+            window.location.reload();
         }
         catch(err) {
             console.log(err);
