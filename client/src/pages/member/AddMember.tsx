@@ -55,7 +55,8 @@ const AddMember = () => {
             // if(response.status !== 200) {
             //     setError(response.data.name)
             // }
-            // navigate("/");
+            navigate('/', { replace: true });
+            window.location.reload(); // Force a reload of the page
         }
         catch(err) {
             console.log(err);

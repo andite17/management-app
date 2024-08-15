@@ -35,7 +35,6 @@ const EditMember = () => {
                     "Authorization" : `Bearer ${sessionStorage.getItem('token')}`
                 }
             })
-            // console.log(res.data)
             setMember(res.data)
         }
 
